@@ -7,8 +7,8 @@ body {
   background-image: url('bkgd2.png');
 }
 .page {
-  width: 75%;
-  max-width: 1270px;
+  width: 80%;
+  max-width: 1100px;
   margin: 0 auto;
 }
 .ball, .button {
@@ -18,9 +18,9 @@ body {
   position:absolute;
   width:14%;
   top:50%;
-  left:50%;
+  left:55%;
   margin-top:-60px;
-  margin-left:-65px;
+  margin-left:-70px;
   font: 16px 'Open Sans', Helvetica, Arial, sans-serif;
   color: #222;
   text-transform: uppercase;
@@ -59,7 +59,7 @@ footer p {
 }
 
 /* Media Queries: Tablet Landscape */
-@media screen and (max-width: 1060px) {
+@media screen and (max-width: 1080px) {
   #primary { width:67%; }
   #secondary { width:30%; margin-left:3%;}  
 }
