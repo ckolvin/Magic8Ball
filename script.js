@@ -1,46 +1,36 @@
-$(document).ready(function() {
+const points = [
+  "It is certain",
+  "Without a doubt",
+  "You may rely on it",
+  "Yes definitely",
+  "It is decidedly so",
+  "As I see it, yes",
+  "Most likely",
+  "Yes",
+  "Outlook good",
+  "Signs point to yes",
+ "Reply hazy try again",
+"Better not tell you now",
+"Ask again later",
+"Cannot predict now",
+"Concentrate and ask again",
+"Don’t count on it",
+"Outlook not so good",
+"My sources say no",
+"Very doubtful",
+"My reply is no"
+];
+document.getElementById("response").innerHTML=points;
 
-  var magic8Ball = {};
-  magic8Ball.listOfAnswers = ["No", "Yes", "I don't think so...", "Of course!", "Indubitably", "In your dreams."];
+function myFunction(){
+  points.sort(function(a,b){return 0.5 - Math.random()});
+  document.getElementById("response").innerHTML=points[0];
+  document.getElementById("response").style.fontSize="18px";
+  setTimeout(timeup, 4000);
 
-  $("#answer").hide();
-
-  magic8Ball.askQuestion = function(question) {
-    $("#8ball").effect("shake");
-
-    $("#8ball").attr("src", "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/magic8ballAnswer.png");
-
-    $("#answer").fadeIn(4000);
-
-    var randomNumber = Math.random();
-
-    var randomNumberForListOfAnswers = randomNumber * this.listOfAnswers.length;
-
-    var randomIndex = Math.floor(randomNumberForListOfAnswers);
-
-    var answer = this.listOfAnswers[randomIndex];
-
-    $("#answer").text(answer);
-
-    console.log(question);
-    console.log(answer);
-  };
-
-  var onClick = function() {
-
-    $("#answer").hide();
-
-    $("#8ball").attr("src", "https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/magic8ballQuestion.png");
-
-
-    setTimeout(function(){
-      var question = prompt("ASK A YES/NO QUESTION!");
-      magic8Ball.askQuestion(question);
-    }, 500);
-
-
-  };
-
-  $("#questionButton").click(onClick);
-
-});
+  function timeup(){
+      document.getElementById("response").innerHTML="8";
+      document.getElementById("response").style.fontSize ="120px";
+      document.getElementById("clear").value="";
+  }
+}
