@@ -7,7 +7,7 @@ body {
   background-image: url('bkgd2.png');
 }
 .page {
-  width: 80%;
+  width: 100%;
   max-width: 1000px;
   margin: 0 auto;
 }
